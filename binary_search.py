@@ -1,7 +1,10 @@
 from unittest import result
 
 
-def binary_search_1(list, target):
+
+#Recursive function always need a stopping condition for it to end. 
+#Make sure all starting points coverge to that stopping conditions. 
+def recursive_binary_search(list, target):
     list_length = len(list)
     mid_element = list[list_length//2]
     if target == mid_element:
@@ -9,20 +12,20 @@ def binary_search_1(list, target):
     if list_length == 1:
         return None
     elif target<mid_element:
-        val = binary_search_1(list[:list_length//2], target)
+        val = recursive_binary_search(list[:list_length//2], target)
         if val == None:
             return None
         else:
             return val
     else:
-        val = binary_search_1(list[list_length//2 + 1:], target)
+        val = recursive_binary_search(list[list_length//2 + 1:], target)
         if val == None:
             return None
         else:
             return val + list_length//2 +1
 
 
-def binary_search_2(list, target):
+def binary_search(list, target):
 
     #The first and last is inclusive here
     first = 0
@@ -41,5 +44,5 @@ def binary_search_2(list, target):
     return None
 
 
-result = binary_search_2([1, 2, 3, 4, 5, 6, 7, 67, 100], 2)
+result = binary_search([1, 2, 3, 4, 5, 6, 7, 67, 100], 2)
 print(result)
