@@ -21,10 +21,11 @@ def binary_search(list, target):
     return None
 
 
-#Recursive function always need a stopping condition for it to end. 
-#Make sure all starting points coverge to that stopping conditions.
+# Recursive function always need atleast one stopping condition for it to end. 
+# Make sure all starting points coverge to those stopping conditions.
 # Space complexity: Here as n increases, the recursive call increases
-# and new variables keeps initializing for every new recursive function call.
+# and new variables keeps initializing for every new recursive function call. 
+# Space complexity is same as time complexity O(logn): logarithmic runtime.
 def recursive_binary_search(list, target):
     list_length = len(list)
     mid_element = list[list_length//2]
